@@ -26,6 +26,7 @@ body > header > form input[type="submit"] {
   background: -moz-linear-gradient(#eee, #ccc); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#eee, #ccc); /* Standard syntax */
   outline-offset: -2px;
+  color: #666;
 }
 body > header > form input[type="submit"]:hover {
   box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
@@ -33,6 +34,7 @@ body > header > form input[type="submit"]:hover {
   background: -o-linear-gradient(#fff, #ccc); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#fff, #ccc); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#fff, #ccc); /* Standard syntax */
+  color: #222;
 }
 body > header > form input[type="submit"]:active {
   box-shadow: none;
@@ -40,4 +42,74 @@ body > header > form input[type="submit"]:active {
   background: -o-linear-gradient(#eee, #ccc); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#eee, #ccc); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#eee, #ccc); /* Standard syntax */
+}
+
+.images{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.images a {
+  text-decoration: none;
+}
+
+.images img {
+  margin: 5px;
+  width: 306px;
+  height: 306px;
+}
+
+.image-animation.ng-enter-stagger {
+  -webkit-animation-delay:0.1s;
+  animation-delay:0.1s;
+
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+
+.image-animation.ng-enter {
+  opacity:0;
+  -webkit-animation:enter_animation 0.3s;
+  animation:enter_animation 0.3s;
+}
+
+@-webkit-keyframes enter_animation {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@keyframes enter_animation {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+.loading, .result, .error {
+  margin: 20px;
+}
+
+.error {
+  color: red;
+}
+
+.loading.ng-enter {
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: loading_animation;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-name: loading_animation;
+  animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes loading_animation {
+  0% {opacity: 1;}
+  50% {opacity: 0.1;}
+  100% {opacity: 1;}
+}
+
+@keyframes loading_animation {
+  0% {opacity: 1;}
+  50% {opacity: 0.1;}
+  100% {opacity: 1;}
 }

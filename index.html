@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="instaSearch">
+<html lang="en" data-ng-app="instaSearch">
 <head>
   <meta charset="UTF-8">
   <title>ngAnimate</title>
   <link rel="stylesheet" href="./app.css">
 </head>
-<body>
+<body data-ng-controller="SearchCtrl">
   <header>
     <img src="images/ng-instagram.png" alt="">
-    <form>
-      <input type="text">
-      <input type="submit" value="search">
+    <form name="searchForm" data-ng-submit="searchInstagram()" novalidate>
+      <input type="text" placeholder="Enter a tag to search" data-ng-model="searchTerm" required>
+      <input type="submit" value="Search">
     </form>
+    <div data-ng-show="submitted && !searchForm.$valid" class="error">Please enter a tag to search.</div>
+    <div data-ng-show="instaError" class="error">There was an error accessing Instagram.</div>
+    <div class="loading" ng-if="loading">loading...</div>
   </header>
+
+  <div class="images">
+    <div class="result">
+      <span ng-if="lastSearch">{{images.length}} results for {{lastSearch}}</span>
+    </div>
+    <a data-ng-repeat="image in images" data-ng-href="{{image.link}}" class="image-animation">
+      <img src="./images/empty.png" data-ng-src="{{image.images.low_resolution.url}}" alt="image of {{searchTerm}}">
+    </a>
+  </div>
   
   <script src="./angular.min.js"></script>
   <script src="./angular-animate.min.js"></script>

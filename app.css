@@ -1,0 +1,43 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+body > header {
+  text-align: center;
+}
+body > header form {
+  margin-top: 20px;
+}
+
+body > header > form input {
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 3px 8px;
+}
+body > header > form input[type="text"] {
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.2);
+}
+body > header > form input[type="submit"] {
+  background: -webkit-linear-gradient(#eee, #ccc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#eee, #ccc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#eee, #ccc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#eee, #ccc); /* Standard syntax */
+  outline-offset: -2px;
+}
+body > header > form input[type="submit"]:hover {
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+  background: -webkit-linear-gradient(#fff, #ccc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#fff, #ccc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#fff, #ccc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#fff, #ccc); /* Standard syntax */
+}
+body > header > form input[type="submit"]:active {
+  box-shadow: none;
+  background: -webkit-linear-gradient(#eee, #ccc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#eee, #ccc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#eee, #ccc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#eee, #ccc); /* Standard syntax */
+}
